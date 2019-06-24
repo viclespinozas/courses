@@ -7,7 +7,7 @@ use Sonata\UserBundle\Entity\BaseGroup as BaseGroup;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="fos_group")
+ * @ORM\Table(name="group")
  */
 class Group extends BaseGroup
 {

@@ -256,7 +256,7 @@ class FosUser
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="FosGroup", inversedBy="user")
-     * @ORM\JoinTable(name="fos_user_user_group",
+     * @ORM\JoinTable(name="fos_user_user_group_",
      *   joinColumns={
      *     @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      *   },
