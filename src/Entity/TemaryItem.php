@@ -59,5 +59,123 @@ class TemaryItem
      */
     private $temary;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
+    /**
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string|null $description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * @param int|null $duration
+     *
+     * @return self
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function isIsCompleted()
+    {
+        return $this->isCompleted;
+    }
+
+    /**
+     * @param bool|null $isCompleted
+     *
+     * @return self
+     */
+    public function setIsCompleted($isCompleted)
+    {
+        $this->isCompleted = $isCompleted;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function isActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param bool|null $active
+     *
+     * @return self
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * @return \Temary
+     */
+    public function getTemary()
+    {
+        return $this->temary;
+    }
+
+    /**
+     * @param \Temary $temary
+     *
+     * @return self
+     */
+    public function setTemary(\Temary $temary)
+    {
+        $this->temary = $temary;
+
+        return $this;
+    }
 }

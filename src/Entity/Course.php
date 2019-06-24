@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -71,9 +73,9 @@ class Course
     private $isFinished;
 
     /**
-     * @var \FosUser
+     * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="created_by", referencedColumnName="id")
      * })
@@ -83,7 +85,7 @@ class Course
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Languages", inversedBy="course")
+     * @ORM\ManyToMany(targetEntity="Languages", inversedBy="courses")
      * @ORM\JoinTable(name="course_has_languages",
      *   joinColumns={
      *     @ORM\JoinColumn(name="course_id", referencedColumnName="id")
@@ -93,16 +95,41 @@ class Course
      *   }
      * )
      */
-    private $languages;
+    private $programmingLanguages;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->languages = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->programmingLanguages = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * @return Collection|Languages[]
+     */
+    public function getProgrammingLanguages(): Collection
+    {
+        return $this->programmingLanguages;
+    }
+
+    public function addProgrammingLanguage(Languages $programmingLanguage): self
+    {
+        if (!$this->programmingLanguages->contains($programmingLanguage)) {
+            $this->programmingLanguages[] = $programmingLanguage;
+        }
+
+        return $this;
+    }
+
+    public function removeProgrammingLanguage(Languages $programmingLanguage): self
+    {
+        if ($this->programmingLanguages->contains($programmingLanguage)) {
+            $this->programmingLanguages->removeElement($programmingLanguage);
+        }
+
+        return $this;
+    }
 
     /**
      * @return int
@@ -265,7 +292,7 @@ class Course
     }
 
     /**
-     * @return \FosUser
+     * @return \User
      */
     public function getCreatedBy()
     {
@@ -273,33 +300,13 @@ class Course
     }
 
     /**
-     * @param \FosUser $createdBy
+     * @param \User $createdBy
      *
      * @return self
      */
-    public function setCreatedBy(\FosUser $createdBy)
+    public function setCreatedBy(\User $createdBy)
     {
         $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getLanguages()
-    {
-        return $this->languages;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $languages
-     *
-     * @return self
-     */
-    public function setLanguages(\Doctrine\Common\Collections\Collection $languages)
-    {
-        $this->languages = $languages;
 
         return $this;
     }
