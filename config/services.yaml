@@ -26,3 +26,45 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    admin.course:
+        class: App\Admin\CourseAdmin
+        arguments: [~, App\Entity\Course, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Course }
+        public: true
+
+    admin.user:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: User }
+        public: true
+
+    admin.group:
+        class: App\Admin\GroupAdmin
+        arguments: [~, App\Entity\Group, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Group }
+        public: true
+
+    admin.languages:
+        class: App\Admin\LanguagesAdmin
+        arguments: [~, App\Entity\Languages, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Languages }
+        public: true
+
+    admin.temary:
+        class: App\Admin\TemaryAdmin
+        arguments: [~, App\Entity\Temary, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Temary }
+        public: true
+
+    admin.temary_item:
+        class: App\Admin\TemaryItemAdmin
+        arguments: [~, App\Entity\TemaryItem, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TemaryItem }
+        public: true
