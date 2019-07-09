@@ -14,17 +14,17 @@ final class TemaryAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-			->add('id')
-			->add('description')
-			;
+            ->add('id')
+            ->add('description')
+            ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-			->add('id')
-			->add('description')
-			->add('_action', null, [
+            ->add('id')
+            ->add('description')
+            ->add('_action', null, [
                 'actions' => [
                     'show' => [],
                     'edit' => [],
@@ -36,16 +36,16 @@ final class TemaryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
-			->add('description')
-			;
+            ->add('id')
+            ->add('description')
+            ;
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-			->add('id')
-			->add('description')
-			;
+            ->add('id')
+            ->add('description')
+            ;
     }
 }
