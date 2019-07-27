@@ -14,17 +14,17 @@ final class LanguagesAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-			->add('id')
-			->add('name')
-			;
+            ->add('id')
+            ->add('name')
+            ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-			->add('id')
-			->add('name')
-			->add('_action', null, [
+            ->add('id')
+            ->add('name')
+            ->add('_action', null, [
                 'actions' => [
                     'show' => [],
                     'edit' => [],
@@ -36,16 +36,16 @@ final class LanguagesAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
-			->add('name')
-			;
+            ->add('id')
+            ->add('name')
+            ;
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-			->add('id')
-			->add('name')
-			;
+            ->add('id')
+            ->add('name')
+            ;
     }
 }

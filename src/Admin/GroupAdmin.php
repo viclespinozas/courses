@@ -14,19 +14,19 @@ final class GroupAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-			->add('name')
-			->add('roles')
-			->add('id')
-			;
+            ->add('name')
+            ->add('roles')
+            ->add('id')
+            ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-			->add('name')
-			->add('roles')
-			->add('id')
-			->add('_action', null, [
+            ->add('name')
+            ->add('roles')
+            ->add('id')
+            ->add('_action', null, [
                 'actions' => [
                     'show' => [],
                     'edit' => [],
@@ -38,18 +38,18 @@ final class GroupAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('name')
-			->add('roles')
-			->add('id')
-			;
+            ->add('name')
+            ->add('roles')
+            ->add('id')
+            ;
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-			->add('name')
-			->add('roles')
-			->add('id')
-			;
+            ->add('name')
+            ->add('roles')
+            ->add('id')
+            ;
     }
 }

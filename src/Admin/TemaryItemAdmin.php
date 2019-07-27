@@ -14,23 +14,23 @@ final class TemaryItemAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-			->add('id')
-			->add('description')
-			->add('duration')
-			->add('isCompleted')
-			->add('active')
-			;
+            ->add('id')
+            ->add('description')
+            ->add('duration')
+            ->add('isCompleted')
+            ->add('active')
+            ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-			->add('id')
-			->add('description')
-			->add('duration')
-			->add('isCompleted')
-			->add('active')
-			->add('_action', null, [
+            ->add('id')
+            ->add('description')
+            ->add('duration')
+            ->add('isCompleted')
+            ->add('active')
+            ->add('_action', null, [
                 'actions' => [
                     'show' => [],
                     'edit' => [],
@@ -42,22 +42,22 @@ final class TemaryItemAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
-			->add('description')
-			->add('duration')
-			->add('isCompleted')
-			->add('active')
-			;
+            ->add('id')
+            ->add('description')
+            ->add('duration')
+            ->add('isCompleted')
+            ->add('active')
+            ;
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-			->add('id')
-			->add('description')
-			->add('duration')
-			->add('isCompleted')
-			->add('active')
-			;
+            ->add('id')
+            ->add('description')
+            ->add('duration')
+            ->add('isCompleted')
+            ->add('active')
+            ;
     }
 }
